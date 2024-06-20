@@ -1,4 +1,5 @@
 # API-FREE-FIRE
+http://localhost:5000/api/HPLVL
         data = [
             {
                 "id": "12345678",
