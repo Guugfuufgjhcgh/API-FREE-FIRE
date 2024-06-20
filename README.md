@@ -1,10 +1,17 @@
-# API-FREE-FIRE
-http://localhost:5000/api/HPLVL
+#FREE FIRE API
+from flask import Flask, jsonify
+from flask_restful import Api, Resource
+
+app = Flask(__name__)
+api = Api(app)
+
+class FreeFirePlayer(Resource):
+    def get(self):
         data = [
             {
                 "id": "12345678",
                 "cached": True,
-                "message": {
+               "message": {
                     "account": {
                         "badge": "17",
                         "bannerId": "901040014",
@@ -355,3 +362,10 @@ http://localhost:5000/api/HPLVL
                 }
             }
         ]
+
+        return jsonify(data)
+
+api.add_resource(FreeFirePlayer, '/api/HPLVL')
+
+if __name__ == '__main__':
+    app.run(debug=True)
